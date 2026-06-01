@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynadot Flows Sled — Test Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f7;color:#1d1d1f;padding:24px;max-width:1280px;margin:0 auto;line-height:1.5}
+  h1{font-size:30px;margin-bottom:6px}
+  .sub{color:#6e6e73;font-size:14px;margin-bottom:24px}
+  .pill{display:inline-block;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:500;margin-left:4px;vertical-align:middle}
+  .pill-pass{background:#e8f9ee;color:#1b7d3a}
+  .pill-mut{background:#fff3e0;color:#cc6600}
+  .pill-cancel{background:#eef;color:#3a3aa0}
+  .pill-flaky{background:#ffeaea;color:#cc1818}
+  .pill-discovery{background:#e6f4ff;color:#0353a4}
+  .pill-tag{background:#f0f0f5;color:#6e6e73;font-family:monospace}
+  section{background:white;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.08);margin-bottom:20px;padding:18px}
+  section h2{font-size:18px;margin-bottom:12px;color:#1d1d1f}
+  .test-row{padding:14px 0;border-bottom:1px solid #f0f0f0}
+  .test-row:last-child{border-bottom:none}
+  .test-title{font-weight:600;font-size:15px;margin-bottom:4px}
+  .test-desc{color:#3a3a3c;font-size:13.5px;margin-bottom:8px}
+  .test-meta{font-size:12px;color:#6e6e73}
+  .test-meta a{color:#0070c9;text-decoration:none}
+  .test-meta a:hover{text-decoration:underline}
+  details{margin-top:8px}
+  summary{cursor:pointer;font-size:12px;color:#0070c9;user-select:none}
+  pre{background:#1d1d1f;color:#e8e8ed;padding:12px 14px;border-radius:8px;font-size:12px;overflow-x:auto;margin-top:6px;white-space:pre-wrap;word-wrap:break-word}
+  .stats{display:flex;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+  .stat{background:white;padding:14px 22px;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,0.08);min-width:120px;text-align:center}
+  .stat .n{font-size:26px;font-weight:700;display:block}
+  .stat .l{font-size:12px;color:#6e6e73;margin-top:2px}
+  nav{margin-bottom:18px}
+  nav a{color:#0070c9;font-size:13px;margin-right:14px;text-decoration:none}
+  nav a:hover{text-decoration:underline}
+  .toc{background:#fff;padding:12px 18px;border-radius:8px;margin-bottom:18px;font-size:13px}
+  .toc a{color:#0070c9;margin-right:12px;text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  footer{margin-top:30px;padding-top:18px;border-top:1px solid #e0e0e0;color:#6e6e73;font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<h1>Dynadot Flows Sled — Test Catalog</h1>
+<p class="sub">All 21 Playwright sled tests for Dynadot domain flows · branch <code>qa/dynadot-flows-sled-phase-1</code> on <a href="https://github.com/wix-private/Premium-QA-Sled">wix-private/Premium-QA-Sled</a> · <a href="https://github.com/wix-private/Premium-QA-Sled/pull/542">PR #542 (draft)</a></p>
+
+<nav>
+  <a href="index.html">← Results dashboard</a>
+  <a href="dynadot-flows-uf5-uf7.webm">📹 Video: UF-5 + UF-7 flows</a>
+  <a href="https://github.com/wix-private/Premium-QA-Sled/tree/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled">Source on GitHub</a>
+</nav>
+
+<div class="stats">
+  <div class="stat"><span class="n">21</span><span class="l">Specs total</span></div>
+  <div class="stat"><span class="n">4</span><span class="l">Passing real-mutation</span></div>
+  <div class="stat"><span class="n">6</span><span class="l">Cancel-safe walks</span></div>
+  <div class="stat"><span class="n">10</span><span class="l">Baseline (rev 1)</span></div>
+  <div class="stat"><span class="n">1</span><span class="l">Discovery</span></div>
+</div>
+
+<div class="toc">
+  <strong>Jump to:</strong>
+  <a href="#post-delivery">Post-delivery actions (13)</a>
+  <a href="#purchase">Purchase / search (7)</a>
+  <a href="#discovery">Discovery (1)</a>
+  <a href="#run">How to run</a>
+</div>
+
+<section id="post-delivery">
+<h2>Post-delivery action specs (the main scope)</h2>
+
+<div class="test-row">
+  <div class="test-title">UF-5 · Update WHOIS contact details <span class="pill pill-pass">✓ passing</span> <span class="pill pill-mut">real mutation</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Edit contact info → changes first name to a fresh value → clicks Save → confirms in modal → re-opens form and asserts the new value persisted.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-05-update-whois.spec.ts">📄 uf-05-update-whois.spec.ts</a>
+    · last run: 29.7s
+  </div>
+  <details><summary>Run locally</summary><pre>cd premium-qa-cdd/02-Domains/dynadot-flows-sled
+AUTOMATION_MASTER_KEY=$AUTOMATION_MASTER_KEY \
+  npx playwright test --config playwright.local.config.ts --headed \
+  sled/tests/e2e/uf-05-update-whois.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-7 · Manage DNS records <span class="pill pill-pass">✓ passing</span> <span class="pill pill-mut">real mutation</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Manage DNS records → clicks Edit on the A record → toggles the IP value between two known IPs → clicks Save → confirms in modal → re-opens and asserts new value persisted.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-07-nameservers.spec.ts">📄 uf-07-nameservers.spec.ts</a>
+    · last run: 27.2s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTOMATION_MASTER_KEY=$AUTOMATION_MASTER_KEY \
+  npx playwright test --config playwright.local.config.ts --headed \
+  sled/tests/e2e/uf-07-nameservers.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-8 · Transfer away from Wix <span class="pill pill-pass">✓ passing</span> <span class="pill pill-cancel">cancel-safe</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Transfer away from Wix → asserts the 4 consequence bullets + 3 CTAs → clicks Cancel (does NOT click "Transfer Domain"). Handles both states: ICANN-60-day-locked modal vs. eligible-to-transfer modal.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-08-transfer-out-auth-code.spec.ts">📄 uf-08-transfer-out-auth-code.spec.ts</a>
+    · last run: 22.1s
+  </div>
+  <details><summary>Run locally (as guyme — uses storage state)</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  TRANSFER_AWAY_TEST_DOMAIN=abadabadue.com \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-08-transfer-out-auth-code.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-30b · Unassign domain from site <span class="pill pill-pass">✓ passing</span> <span class="pill pill-cancel">cancel-safe</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Unassign from this site → asserts modal content + the consequence bullet → clicks Cancel. Cancel-safe by design (the destructive "Unassign Domain" click is available as a local variant).</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-30b-unassign-from-site.spec.ts">📄 uf-30b-unassign-from-site.spec.ts</a>
+    · last run: 20.8s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  UNASSIGN_TEST_DOMAIN=domain-upsell.org \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-30b-unassign-from-site.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-30c · Assign to a different site <span class="pill pill-pass">✓ passing</span> <span class="pill pill-cancel">cancel-safe</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Assign to a different site → asserts the site-picker UI surfaced → cancels/closes without re-assigning.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-30c-assign-to-different-site.spec.ts">📄 uf-30c-assign-to-different-site.spec.ts</a>
+    · last run: 20.6s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  ASSIGN_SITE_TEST_DOMAIN=domain-upsell.org \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-30c-assign-to-different-site.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-32 · Remove domain from Wix <span class="pill pill-pass">✓ passing</span> <span class="pill pill-cancel">cancel-safe</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Remove from Wix → asserts the consequence bullets + 3 CTAs ([Keep Domain at Wix] [Cancel] [Remove Domain]) → clicks Cancel.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-32-remove-from-wix.spec.ts">📄 uf-32-remove-from-wix.spec.ts</a>
+    · last run: 21.1s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  REMOVE_TEST_DOMAIN=domain-upsell.org \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-32-remove-from-wix.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-29 · Connect email purchased outside of Wix <span class="pill pill-pass">✓ passing</span> <span class="pill pill-cancel">cancel-safe</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Opens Domain Actions → Connect email purchased outside of Wix → asserts the email-provider config UI surfaced → cancels without configuring.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-29-connect-email.spec.ts">📄 uf-29-connect-email.spec.ts</a>
+    · last run: 21.0s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  CONNECT_EMAIL_TEST_DOMAIN=domain-upsell.org \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-29-connect-email.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-19 · Transfer to Wix (transfer-IN) <span class="pill pill-flaky">⚠ flaky</span> <span class="pill pill-cancel">cancel-safe</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Click "Transfer to Wix" inline link or menu item → navigates to <code>/wix/api/domainTransferInFullFlowPurchaseStart</code> → asserts URL changed → backs out without submitting payment. Currently flaky on the Wix Studio Partner shell (slow initial page load).</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-19-transfer-to-wix.spec.ts">📄 uf-19-transfer-to-wix.spec.ts</a>
+  </div>
+  <details><summary>Run locally</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  TRANSFER_IN_TEST_DOMAIN=domain-upsell.org \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-19-transfer-to-wix.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-10c · Resend Verification Email <span class="pill pill-pass">✓ passing</span> <span class="pill pill-mut">idempotent click</span> <span class="pill pill-tag">@manage</span></div>
+  <div class="test-desc">Targets a suspended/IcannDeactivated domain → finds the "Resend Verification Email" button in the suspension banner → clicks it → asserts the click registered. Idempotent (no state mutation beyond emailing).</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-10c-resend-verification.spec.ts">📄 uf-10c-resend-verification.spec.ts</a>
+    · last run: 22.0s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  RESEND_VERIFICATION_TEST_DOMAIN=nfg543hdsgfhsdgfd.net \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-10c-resend-verification.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-6 · Privacy toggle <span class="pill pill-tag">@manage</span> baseline rev 1</div>
+  <div class="test-desc">Opens Domain Manager → Privacy panel → asserts privacy switch is visible. Read-only assertion; mutation flow pending an unsuspended test domain.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-06-privacy-toggle.spec.ts">📄 uf-06-privacy-toggle.spec.ts</a>
+  </div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-11 · Domain lock / unlock <span class="pill pill-tag">@manage</span> baseline rev 1</div>
+  <div class="test-desc">Opens Domain Manager → Lock panel → asserts lock switch is visible.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-11-lock-unlock.spec.ts">📄 uf-11-lock-unlock.spec.ts</a>
+  </div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-22 · DNSSEC enable + disable <span class="pill pill-tag">@manage</span> baseline rev 1</div>
+  <div class="test-desc">Opens Domain Manager → DNSSEC panel → asserts the "Add DS" CTA is visible.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-22-dnssec.spec.ts">📄 uf-22-dnssec.spec.ts</a>
+  </div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-30 · Connect domain to existing Wix site <span class="pill pill-tag">@manage</span> baseline rev 1</div>
+  <div class="test-desc">Opens Domain Manager → Connect-to-site panel → asserts site picker visible.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-30-connect-to-site.spec.ts">📄 uf-30-connect-to-site.spec.ts</a>
+  </div>
+</div>
+
+</section>
+
+<section id="purchase">
+<h2>Purchase / search specs (rev 1 baseline)</h2>
+<p style="font-size:13px;color:#6e6e73;margin-bottom:12px">These were built during rev 1 and walk the search/purchase UI up to (but not including) the final Confirm. Per the rev-5 spec refocus, this sled's main scope shifted to post-delivery actions — these stay as a baseline for the purchase UX surface.</p>
+
+<div class="test-row">
+  <div class="test-title">UF-1 · Purchase a paid domain via Wix <span class="pill pill-tag">@purchase</span> <span class="pill pill-tag">@smoke</span></div>
+  <div class="test-desc">Search a random .com → click Buy → walk through cart/plan/contact-info → assert NetworkRecorder caught no register call.</div>
+  <div class="test-meta"><a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-01-purchase.spec.ts">📄 uf-01-purchase.spec.ts</a></div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-2 · Free domain with Wix Premium plan <span class="pill pill-tag">@purchase</span></div>
+  <div class="test-desc">Search random .com → walk to contact-info → assert no register fires.</div>
+  <div class="test-meta"><a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-02-free-domain-with-plan.spec.ts">📄 uf-02-free-domain-with-plan.spec.ts</a></div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-12 · Multi-year registration at purchase <span class="pill pill-tag">@purchase</span></div>
+  <div class="test-desc">Search → click Buy → select 5-year period → walk to contact-info.</div>
+  <div class="test-meta"><a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-12-multi-year.spec.ts">📄 uf-12-multi-year.spec.ts</a></div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-13 · IDN / Unicode domain registration <span class="pill pill-tag">@purchase</span></div>
+  <div class="test-desc">Search münich&lt;ts&gt;.com → assert IDN renders and walks to contact-info.</div>
+  <div class="test-meta"><a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-13-idn-domain.spec.ts">📄 uf-13-idn-domain.spec.ts</a></div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-14 · Premium-domain attempt (blocked) <span class="pill pill-pass">✓ passing</span> <span class="pill pill-tag">@search</span> <span class="pill pill-tag">@smoke</span></div>
+  <div class="test-desc">Search pizza.com (premium SLD) → assert UI shows "no longer available" + no Buy CTA + no $ price leaks.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-14-premium-blocked.spec.ts">📄 uf-14-premium-blocked.spec.ts</a>
+    · last run: 5.7s
+  </div>
+  <details><summary>Run locally</summary><pre>AUTOMATION_MASTER_KEY=$AUTOMATION_MASTER_KEY \
+  npx playwright test --config playwright.local.config.ts --headed \
+  sled/tests/e2e/uf-14-premium-blocked.spec.ts</pre></details>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-17 · Search → compare TLDs → register <span class="pill pill-tag">@search</span></div>
+  <div class="test-desc">Search 2nd-level domain → assert multiple TLD cards render with prices.</div>
+  <div class="test-meta"><a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-17-compare-tlds.spec.ts">📄 uf-17-compare-tlds.spec.ts</a></div>
+</div>
+
+<div class="test-row">
+  <div class="test-title">UF-18 · Bulk register (cart with multiple domains) <span class="pill pill-tag">@purchase</span></div>
+  <div class="test-desc">Add multi-TLD domains to cart → walk to contact-info → assert no register fires.</div>
+  <div class="test-meta"><a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-18-bulk-cart.spec.ts">📄 uf-18-bulk-cart.spec.ts</a></div>
+</div>
+
+</section>
+
+<section id="discovery">
+<h2>Discovery spec</h2>
+
+<div class="test-row">
+  <div class="test-title">Discovery · List domains and observed states <span class="pill pill-discovery">discovery</span> <span class="pill pill-tag">@discovery</span></div>
+  <div class="test-desc">Walks the Domain Manager for the current user (typically guyme@wix.com via stored session), captures per-domain state + visible row actions, writes findings to <code>test-results/discovery/&lt;timestamp&gt;-domain-list.json</code>. Read-only; never mutates. Excluded from the main CI suite via <code>testIgnore</code> in <code>playwright.config.ts</code>.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/discovery/list-domains.spec.ts">📄 discovery/list-domains.spec.ts</a>
+    · last run on guyme@wix.com: 389 domains catalogued
+  </div>
+  <details><summary>Run locally (requires captured session)</summary><pre># 1. Capture your session (one-time, interactive — Okta SSO + MFA in the popup)
+npm run capture-session guyme
+
+# 2. Run the discovery spec as you
+AUTH_STORAGE_STATE=.auth/guyme-session.json npm run discover</pre></details>
+</div>
+
+</section>
+
+<section id="run">
+<h2>How to run any of these locally</h2>
+<p style="font-size:13.5px;margin-bottom:10px"><strong>Prereqs</strong></p>
+<pre>git clone git@github.com:wix-private/Premium-QA-Sled.git
+cd Premium-QA-Sled
+git checkout qa/dynadot-flows-sled-phase-1
+cd premium-qa-cdd/02-Domains/dynadot-flows-sled
+npm install
+npx playwright install chromium</pre>
+
+<p style="font-size:13.5px;margin:14px 0 6px"><strong>Run as the QA automation user</strong> (default — uses <code>AUTOMATION_MASTER_KEY</code> from <code>~/.zshrc</code>)</p>
+<pre>source ~/.zshrc
+npm test            # full suite, headless
+npm run test:smoke  # only @smoke-tagged specs, headed</pre>
+
+<p style="font-size:13.5px;margin:14px 0 6px"><strong>Run as yourself</strong> (Okta SSO, against your own domains)</p>
+<pre># One-time interactive: opens Chromium → you log in via Okta → script saves session
+npm run capture-session guyme
+
+# Now run any spec as you
+AUTH_STORAGE_STATE=.auth/guyme-session.json npm run test:as-user
+# or a specific spec:
+AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-05-update-whois.spec.ts</pre>
+
+<p style="font-size:13.5px;margin:14px 0 6px"><strong>Build the dashboard from the latest run</strong></p>
+<pre>npm run build:dashboard
+open dist/index.html</pre>
+
+</section>
+
+<footer>
+Source: <a href="https://github.com/wix-private/Premium-QA-Sled/tree/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled">dynadot-flows-sled</a>
+· PR <a href="https://github.com/wix-private/Premium-QA-Sled/pull/542">#542</a>
+· Spec rev 6: <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/docs/superpowers/specs/2026-05-27-dynadot-sled-design.md">design doc</a>
+</footer>
+
+</body>
+</html>
