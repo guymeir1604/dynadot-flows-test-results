@@ -44,7 +44,7 @@
 <body>
 
 <h1>Dynadot Flows Sled — Test Catalog</h1>
-<p class="sub">All 21 Playwright sled tests for Dynadot domain flows · branch <code>qa/dynadot-flows-sled-phase-1</code> on <a href="https://github.com/wix-private/Premium-QA-Sled">wix-private/Premium-QA-Sled</a> · <a href="https://github.com/wix-private/Premium-QA-Sled/pull/542">PR #542 (draft)</a></p>
+<p class="sub">All 22 Playwright sled tests for Dynadot domain flows · branch <code>qa/dynadot-flows-sled-phase-1</code> on <a href="https://github.com/wix-private/Premium-QA-Sled">wix-private/Premium-QA-Sled</a> · <a href="https://github.com/wix-private/Premium-QA-Sled/pull/542">PR #542 (draft)</a></p>
 
 <nav>
   <a href="index.html">← Results dashboard</a>
@@ -53,20 +53,51 @@
 </nav>
 
 <div class="stats">
-  <div class="stat"><span class="n">21</span><span class="l">Specs total</span></div>
-  <div class="stat"><span class="n">4</span><span class="l">Passing real-mutation</span></div>
-  <div class="stat"><span class="n">6</span><span class="l">Cancel-safe walks</span></div>
+  <div class="stat"><span class="n">22</span><span class="l">Specs total</span></div>
+  <div class="stat"><span class="n">1</span><span class="l">RPC integration</span></div>
+  <div class="stat"><span class="n">4</span><span class="l">Real-mutation</span></div>
+  <div class="stat"><span class="n">6</span><span class="l">Cancel-safe</span></div>
   <div class="stat"><span class="n">10</span><span class="l">Baseline (rev 1)</span></div>
   <div class="stat"><span class="n">1</span><span class="l">Discovery</span></div>
 </div>
 
 <div class="toc">
   <strong>Jump to:</strong>
+  <a href="#rpc">🔥 Domain delivery RPC (1)</a>
   <a href="#post-delivery">Post-delivery actions (13)</a>
   <a href="#purchase">Purchase / search (7)</a>
   <a href="#discovery">Discovery (1)</a>
   <a href="#run">How to run</a>
 </div>
+
+<section id="rpc">
+<h2>🔥 Domain delivery integration test — calls the real RPC</h2>
+<p style="font-size:13px;color:#6e6e73;margin-bottom:12px">The end-to-end <code>PremiumAutomation.RunDomainDeliveryE2E</code> RPC validates the full Wix → DomainVendorService → Dynadot → three-way verification path. The sled drives the BO Fire Console UI at <code>wix-bo.com/fire-console</code> to invoke it.</p>
+
+<div class="test-row">
+  <div class="test-title">UF-RPC · Domain delivery E2E via PremiumAutomation <span class="pill pill-pass">✓ passing</span> <span class="pill pill-mut">real RPC call</span> <span class="pill pill-tag">@rpc</span></div>
+  <div class="test-desc">Navigates to BO Fire Console with the pre-built RunDomainDeliveryE2E request body (dry_run=true by default). Clicks Fire. Captures the gRPC-over-HTTP response from <code>/fire-console/invoke/</code>. Asserts the <code>TldE2EResponse</code> shape: <code>results[]</code> with <code>tld</code>, <code>status</code> (DRY_RUN | SUCCESS | FAILURE | SKIPPED), <code>registrar_verified</code>, <code>registration_verified</code>, <code>sbs_verified</code>. Override via env vars: <code>RPC_DRY_RUN</code>, <code>RPC_COST_LIMIT_USD</code>, <code>RPC_TLD_FILTER</code>, <code>RPC_SITE_ID</code>, <code>RPC_PAYMENT_SOURCE_ID</code>.</div>
+  <div class="test-meta">
+    <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-rpc-domain-delivery.spec.ts">📄 uf-rpc-domain-delivery.spec.ts</a>
+    · last run: 16.7s · sample response: <code>TLD xyz / status=DRY_RUN / domain=testdomain&lt;rand&gt;.xyz / expected_domain_price=15.95 EUR / total_cost_usd=0</code>
+  </div>
+  <details><summary>Run locally — dry_run (safe, no money)</summary><pre>npm run capture-session guyme   # one-time, captures BOTH manage.wix.com + wix-bo.com auth
+AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-rpc-domain-delivery.spec.ts</pre></details>
+  <details><summary>Run locally — REAL delivery (costs money!)</summary><pre>AUTH_STORAGE_STATE=.auth/guyme-session.json \
+  RPC_DRY_RUN=false \
+  RPC_COST_LIMIT_USD=100 \
+  RPC_TLD_FILTER=xyz \
+  npx playwright test --config playwright.local.guyme.config.ts --headed \
+  sled/tests/e2e/uf-rpc-domain-delivery.spec.ts
+
+# Expected: status=SUCCESS, all 3 *_verified flags true, domain_name populated,
+# total_cost_usd ~ catalog price, real domain registered in the designated
+# Dynadot account.</pre></details>
+</div>
+
+</section>
 
 <section id="post-delivery">
 <h2>Post-delivery action specs (the main scope)</h2>
