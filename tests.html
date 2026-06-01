@@ -49,6 +49,7 @@
 <nav>
   <a href="index.html">← Results dashboard</a>
   <a href="dynadot-flows-uf5-uf7.webm">📹 Video: UF-5 + UF-7 flows</a>
+  <a href="dynadot-flows-uf-rpc.webm">📹 Video: UF-RPC domain delivery</a>
   <a href="https://github.com/wix-private/Premium-QA-Sled/tree/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled">Source on GitHub</a>
 </nav>
 
@@ -79,6 +80,7 @@
   <div class="test-desc">Navigates to BO Fire Console with the pre-built RunDomainDeliveryE2E request body (dry_run=true by default). Clicks Fire. Captures the gRPC-over-HTTP response from <code>/fire-console/invoke/</code>. Asserts the <code>TldE2EResponse</code> shape: <code>results[]</code> with <code>tld</code>, <code>status</code> (DRY_RUN | SUCCESS | FAILURE | SKIPPED), <code>registrar_verified</code>, <code>registration_verified</code>, <code>sbs_verified</code>. Override via env vars: <code>RPC_DRY_RUN</code>, <code>RPC_COST_LIMIT_USD</code>, <code>RPC_TLD_FILTER</code>, <code>RPC_SITE_ID</code>, <code>RPC_PAYMENT_SOURCE_ID</code>.</div>
   <div class="test-meta">
     <a href="https://github.com/wix-private/Premium-QA-Sled/blob/qa/dynadot-flows-sled-phase-1/premium-qa-cdd/02-Domains/dynadot-flows-sled/sled/tests/e2e/uf-rpc-domain-delivery.spec.ts">📄 uf-rpc-domain-delivery.spec.ts</a>
+    · <a href="dynadot-flows-uf-rpc.webm">📹 watch the flow</a>
     · last run: 16.7s · sample response: <code>TLD xyz / status=DRY_RUN / domain=testdomain&lt;rand&gt;.xyz / expected_domain_price=15.95 EUR / total_cost_usd=0</code>
   </div>
   <details><summary>Run locally — dry_run (safe, no money)</summary><pre>npm run capture-session guyme   # one-time, captures BOTH manage.wix.com + wix-bo.com auth
