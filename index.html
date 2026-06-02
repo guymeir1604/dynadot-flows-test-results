@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Dynadot Flows Sled — guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</title>
+<title>Dynadot Flows Sled — prod</title>
 <style>
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f7;color:#1d1d1f;padding:24px;max-width:1280px;margin:0 auto}
   header{text-align:center;margin-bottom:24px}
@@ -37,13 +37,13 @@
 <body>
   <header>
     <h1>Dynadot Flows Sled</h1>
-    <p>Phase 1 — 14 UF flows. <span class="env-badge">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></p>
-    <p style="color:#6e6e73;font-size:13px">Updated: Tue, 02 Jun 2026 14:46:10 GMT</p>
+    <p>Phase 1 — 14 UF flows. <span class="env-badge">prod</span></p>
+    <p style="color:#6e6e73;font-size:13px">Updated: Tue, 02 Jun 2026 15:11:47 GMT</p>
   </header>
   <div class="stats">
-    <div class="stat pass"><div class="n">4</div><div>Passed</div></div>
-    <div class="stat fail"><div class="n">6</div><div>Failed</div></div>
-    <div class="stat skip"><div class="n">3</div><div>Skipped</div></div>
+    <div class="stat pass"><div class="n">5</div><div>Passed</div></div>
+    <div class="stat fail"><div class="n">4</div><div>Failed</div></div>
+    <div class="stat skip"><div class="n">4</div><div>Skipped</div></div>
   </div>
   
   <section>
@@ -51,12 +51,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>clicks Resend Verification Email</code></td>
+    <td><code>clicks Resend Verification Email and asserts the click registered</code></td>
     <td><span class="ok">✓ PASS</span></td>
     <td></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">verification (fresh domain banner)</a></td>
-    <td>20.4s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.10</a></td>
+    <td>106.8s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -67,11 +67,11 @@
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
     <td><code>opens Lock panel; lock switch is visible</code></td>
-    <td><span class="fail">✗ FAIL</span></td>
-    <td><code>DYN-LOCK-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.8 — Lock (needs detail-page driver, Task #55)</a></td>
-    <td>144.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><span class="skip">⏭ SKIP</span></td>
+    <td><code>DYN-LCK-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.8</a></td>
+    <td>98.0s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -81,12 +81,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>clicking Transfer to Wix navigates to transfer-in</code></td>
+    <td><code>clicking Transfer to Wix navigates to transfer-in purchase flow</code></td>
     <td><span class="skip">⏭ SKIP</span></td>
     <td><code>DYN-TR-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">transfer-in — N/A (domain already at Wix)</a></td>
-    <td>0.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">transfer-in</a></td>
+    <td>17.8s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -96,12 +96,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>opens DNSSEC section inside Edit Contact Info</code></td>
-    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>opens DNSSEC section inside Edit Contact Info (or skips if no dnssec addon)</code></td>
+    <td><span class="skip">⏭ SKIP</span></td>
     <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.7 — DNSSEC (only with dnssec addon; shell timeout)</a></td>
-    <td>144.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.7 (DNSSEC inside Edit Contact Info)</a></td>
+    <td>139.0s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -111,12 +111,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>opens email-connect UI, cancels</code></td>
+    <td><code>opens email-connect UI, asserts content, cancels without configuring</code></td>
     <td><span class="ok">✓ PASS</span></td>
     <td></td>
     <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">email-connect</a></td>
-    <td>18.9s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td>97.3s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -127,11 +127,11 @@
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
     <td><code>opens site picker modal from row menu</code></td>
-    <td><span class="fail">✗ FAIL</span></td>
+    <td><span class="ok">✓ PASS</span></td>
     <td></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment (smoke) — shell timeout</a></td>
-    <td>144.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment (smoke)</a></td>
+    <td>118.3s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -141,12 +141,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>opens Unassign modal, cancels</code></td>
-    <td><span class="skip">⏭ SKIP</span></td>
+    <td><code>opens Unassign modal, asserts content, cancels without disconnecting</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
     <td></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment — N/A (domain not assigned)</a></td>
-    <td>0.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment</a></td>
+    <td>142.5s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -156,12 +156,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>open picker → pick site → Assign → verify (FULL commit)</code></td>
+    <td><code>open picker → pick site → handle redirect-option → Assign → verify assignment</code></td>
     <td><span class="fail">✗ FAIL</span></td>
     <td><code>DYN-ASGN-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment (commit) — picker slow on this account</a></td>
-    <td>144.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment (commit)</a></td>
+    <td>85.9s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -171,12 +171,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>opens Remove modal, cancels</code></td>
+    <td><code>opens Remove modal, asserts content, cancels without removing</code></td>
     <td><span class="skip">⏭ SKIP</span></td>
     <td></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">revoke / cancellation — N/A (not in row menu, Task #55)</a></td>
-    <td>0.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">revoke / cancellation</a></td>
+    <td>20.5s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -189,9 +189,9 @@
     <td><code>change first name, save, and assert it persists</code></td>
     <td><span class="ok">✓ PASS</span></td>
     <td><code>DYN-CON-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.6 — Update WHOIS (real mutation)</a></td>
-    <td>42.7s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.6</a></td>
+    <td>41.0s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -204,9 +204,9 @@
     <td><code>opens Privacy panel and a privacy switch is visible</code></td>
     <td><span class="fail">✗ FAIL</span></td>
     <td><code>DYN-PRV-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.8 — Privacy (needs detail-page driver, Task #55)</a></td>
-    <td>144.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.8</a></td>
+    <td>142.5s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -219,9 +219,9 @@
     <td><code>change A record value, save, and assert it persists</code></td>
     <td><span class="ok">✓ PASS</span></td>
     <td><code>DYN-NS-1</code> <code>DYN-DS-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.7 — Manage DNS (real mutation)</a></td>
-    <td>28.1s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.7</a></td>
+    <td>27.4s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
@@ -231,12 +231,12 @@
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>opens Transfer-away modal (cancel-safe)</code></td>
+    <td><code>opens Transfer-away modal, asserts content, cancels without triggering transfer</code></td>
     <td><span class="fail">✗ FAIL</span></td>
     <td><code>DYN-AUTH-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.9 — Transfer-away (ICANN lock timing)</a></td>
-    <td>144.0s</td>
-    <td><span class="env-guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.9</a></td>
+    <td>122.8s</td>
+    <td><span class="env-prod">prod</span></td>
   </tr>
     </table>
     
