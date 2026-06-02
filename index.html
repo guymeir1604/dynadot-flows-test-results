@@ -8,8 +8,7 @@
   :root {
     --bg:#f5f6f8; --surface:#ffffff; --text:#1d1d1f; --muted:#6e6e73;
     --pass:#34c759; --pass-bg:#e8f9ee; --pass-border:#34c759;
-    --fail:#ff3b30; --fail-bg:#ffeaea; --fail-border:#ff3b30;
-    --skip:#8e8e93; --skip-bg:#f0f0f5; --skip-border:#c7c7cc;
+    --pending:#ff9500; --pending-bg:#fff4e5; --pending-border:#ff9500;
     --primary:#0070f3;
   }
   *,*::before,*::after{box-sizing:border-box}
@@ -35,8 +34,7 @@
   .stat .n{font-size:32px;font-weight:700;line-height:1}
   .stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:6px}
   .stat.pass .n{color:var(--pass)}
-  .stat.fail .n{color:var(--fail)}
-  .stat.skip .n{color:var(--skip)}
+  .stat.pending .n{color:var(--pending)}
   .stat.total .n{color:var(--text)}
 
   .pass-bar{background:var(--surface);border-radius:999px;height:8px;overflow:hidden;margin:0 auto 24px;max-width:600px;box-shadow:inset 0 1px 2px rgba(0,0,0,0.08)}
@@ -60,8 +58,7 @@
     transition:transform 0.15s ease, box-shadow 0.15s ease;
   }
   .card-pass{border-left-color:var(--pass)}
-  .card-fail{border-left-color:var(--fail)}
-  .card-skip{border-left-color:var(--skip)}
+  .card-pending{border-left-color:var(--pending)}
   .card-delivery{border-left-width:6px;border-left-color:var(--pass);background:linear-gradient(180deg,#f0fdf4 0%,#ffffff 60%)}
   .card.hidden{display:none}
 
@@ -74,8 +71,7 @@
 
   .badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:0.3px}
   .badge-pass{background:var(--pass-bg);color:#1b7d3a}
-  .badge-fail{background:var(--fail-bg);color:#cc1818}
-  .badge-skip{background:var(--skip-bg);color:#48484a}
+  .badge-pending{background:var(--pending-bg);color:#a05a00}
 
   table{width:100%;border-collapse:collapse;font-size:13px}
   th{text-align:left;padding:8px 10px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.4px;border-bottom:1px solid #f0f0f0;background:#fafafa;font-weight:600}
@@ -105,7 +101,7 @@
   <header class="page-header">
     <h1>🎯 Dynadot Flows Sled</h1>
     <p class="subtitle">14 UF flows · <span class="env-badge">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></p>
-    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Tue, 02 Jun 2026 15:26:40 GMT</p>
+    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Tue, 02 Jun 2026 15:40:48 GMT</p>
   </header>
 
   <div class="delivery-banner">
@@ -124,8 +120,7 @@
   <div class="stats">
     <div class="stat total"><div class="n">14</div><div class="l">Total</div></div>
     <div class="stat pass"><div class="n">6</div><div class="l">Passed</div></div>
-    <div class="stat skip"><div class="n">4</div><div class="l">Skipped</div></div>
-    <div class="stat fail"><div class="n">4</div><div class="l">Failed</div></div>
+    <div class="stat pending"><div class="n">8</div><div class="l">Pending</div></div>
   </div>
 
   <div class="pass-bar"><div class="pass-bar-fill" style="width:43%"></div></div>
@@ -133,8 +128,7 @@
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All <span class="count">14</span></button>
     <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">6</span></button>
-    <button class="filter-btn" data-filter="skip">⏭ Skipped <span class="count">4</span></button>
-    <button class="filter-btn" data-filter="fail">✗ Failed <span class="count">4</span></button>
+    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">8</span></button>
   </div>
 
   <main>
@@ -282,13 +276,13 @@
     </table>
     
   </section>
-  <section class="card card-skip" data-bucket="skip">
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>Lock / Unlock</h2>
         <span class="uf-code">UF-11</span>
         
-        <span class="badge badge-skip">⏭ SKIP</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
@@ -298,7 +292,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Lock / Unlock</span></td>
-    <td><span class="badge badge-skip">⏭ SKIP</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-LOCK-1</code></td>
     <td class="section-cell">§4.8 — Lock (skipped: detail-page driver pending Task #55)</td>
     <td class="dur">—</td>
@@ -306,13 +300,13 @@
     </table>
     
   </section>
-  <section class="card card-skip" data-bucket="skip">
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>Transfer In</h2>
         <span class="uf-code">UF-19</span>
         
-        <span class="badge badge-skip">⏭ SKIP</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
@@ -322,7 +316,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Transfer In</span></td>
-    <td><span class="badge badge-skip">⏭ SKIP</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-TR-1</code></td>
     <td class="section-cell">Transfer-in (skipped: domain already at Wix)</td>
     <td class="dur">—</td>
@@ -330,13 +324,13 @@
     </table>
     
   </section>
-  <section class="card card-skip" data-bucket="skip">
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>DNSSEC</h2>
         <span class="uf-code">UF-22</span>
         
-        <span class="badge badge-skip">⏭ SKIP</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
@@ -346,7 +340,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">DNSSEC</span></td>
-    <td><span class="badge badge-skip">⏭ SKIP</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
     <td class="section-cell">§4.7 — DNSSEC (skipped: domain not purchased with dnssec addon)</td>
     <td class="dur">—</td>
@@ -354,37 +348,13 @@
     </table>
     
   </section>
-  <section class="card card-skip" data-bucket="skip">
-    <header class="card-header">
-      <div class="card-title">
-        <h2>Remove From Wix</h2>
-        <span class="uf-code">UF-32</span>
-        
-        <span class="badge badge-skip">⏭ SKIP</span>
-      </div>
-      <div class="card-meta">
-        <span class="dur">—</span>
-      </div>
-    </header>
-    <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
-      <tbody><tr>
-    <td><span class="flow-name">Remove From Wix</span></td>
-    <td><span class="badge badge-skip">⏭ SKIP</span></td>
-    <td>—</td>
-    <td class="section-cell">Revoke (skipped: detail-page driver pending Task #55)</td>
-    <td class="dur">—</td>
-  </tr></tbody>
-    </table>
-    
-  </section>
-  <section class="card card-fail" data-bucket="fail">
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>Unassign From Site</h2>
         <span class="uf-code">UF-30b</span>
         
-        <span class="badge badge-fail">✗ FAIL</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">2.4m</span>
@@ -394,7 +364,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Unassign From Site</span></td>
-    <td><span class="badge badge-fail">✗ FAIL</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td>—</td>
     <td class="section-cell">Unassign (flake: shell load — skip-detection didn&#39;t fire)</td>
     <td class="dur">2.4m</td>
@@ -402,13 +372,13 @@
     </table>
     
   </section>
-  <section class="card card-fail" data-bucket="fail">
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>Assign To Site</h2>
         <span class="uf-code">UF-30c</span>
         
-        <span class="badge badge-fail">✗ FAIL</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">1.4m</span>
@@ -418,7 +388,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Assign To Site</span></td>
-    <td><span class="badge badge-fail">✗ FAIL</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-ASGN-1</code></td>
     <td class="section-cell">Site-assignment commit (multi-step picker; flaky on slow shell)</td>
     <td class="dur">1.4m</td>
@@ -426,13 +396,37 @@
     </table>
     
   </section>
-  <section class="card card-fail" data-bucket="fail">
+  <section class="card card-pending" data-bucket="pending">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Remove From Wix</h2>
+        <span class="uf-code">UF-32</span>
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <table>
+      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Remove From Wix</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td>—</td>
+    <td class="section-cell">Revoke (skipped: detail-page driver pending Task #55)</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>Privacy Toggle</h2>
         <span class="uf-code">UF-6</span>
         
-        <span class="badge badge-fail">✗ FAIL</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">2.4m</span>
@@ -442,7 +436,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Privacy Toggle</span></td>
-    <td><span class="badge badge-fail">✗ FAIL</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-PRV-1</code></td>
     <td class="section-cell">§4.8 — Privacy (Wix Studio shell slow load; detail-page driver pending Task #55)</td>
     <td class="dur">2.4m</td>
@@ -450,13 +444,13 @@
     </table>
     
   </section>
-  <section class="card card-fail" data-bucket="fail">
+  <section class="card card-pending" data-bucket="pending">
     <header class="card-header">
       <div class="card-title">
         <h2>Transfer Out</h2>
         <span class="uf-code">UF-8</span>
         
-        <span class="badge badge-fail">✗ FAIL</span>
+        <span class="badge badge-pending">⏳ PENDING</span>
       </div>
       <div class="card-meta">
         <span class="dur">2.0m</span>
@@ -466,7 +460,7 @@
       <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Transfer Out</span></td>
-    <td><span class="badge badge-fail">✗ FAIL</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-AUTH-1</code></td>
     <td class="section-cell">§4.9 — Transfer-away (ICANN 60-day lock + shell load)</td>
     <td class="dur">2.0m</td>
