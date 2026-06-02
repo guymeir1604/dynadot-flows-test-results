@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Dynadot Flows Sled — prod</title>
+<title>Dynadot Flows Sled — unknown</title>
 <style>
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f7;color:#1d1d1f;padding:24px;max-width:1280px;margin:0 auto}
   header{text-align:center;margin-bottom:24px}
@@ -37,69 +37,209 @@
 <body>
   <header>
     <h1>Dynadot Flows Sled</h1>
-    <p>Phase 1 — 14 UF flows. <span class="env-badge">prod</span></p>
-    <p style="color:#6e6e73;font-size:13px">Updated: Mon, 01 Jun 2026 10:41:50 GMT</p>
-  <p style="margin-top:10px;font-size:14px"><a href="tests.html" style="display:inline-block;background:#0070c9;color:white;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:500">📋 View test catalog (all 22 specs)</a> &nbsp; <a href="dynadot-flows-uf5-uf7.webm" style="color:#0070c9;text-decoration:none">📹 UF-5+UF-7 video</a> &nbsp; <a href="dynadot-flows-uf-rpc.webm" style="color:#0070c9;text-decoration:none">📹 UF-RPC video</a></p></header>
+    <p>Phase 1 — 14 UF flows. <span class="env-badge">unknown</span></p>
+    <p style="color:#6e6e73;font-size:13px">Updated: Tue, 02 Jun 2026 14:15:12 GMT</p>
+  </header>
   <div class="stats">
-    <div class="stat pass"><div class="n">1</div><div>Passed</div></div>
-    <div class="stat fail"><div class="n">0</div><div>Failed</div></div>
+    <div class="stat pass"><div class="n">4</div><div>Passed</div></div>
+    <div class="stat fail"><div class="n">9</div><div>Failed</div></div>
     <div class="stat skip"><div class="n">0</div><div>Skipped</div></div>
   </div>
   
   <section>
-    <h2>UF-RPC</h2>
+    <h2>UF-10c</h2>
     <table>
       <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
       <tr>
-    <td><code>Fire Console → RunDomainDeliveryE2E (dry_run) returns valid TldE2EResult</code></td>
+    <td><code>clicks Resend Verification Email and asserts the click registered</code></td>
     <td><span class="ok">✓ PASS</span></td>
-    <td><code>DYN-REG-1</code> <code>DYN-INFO-1</code> <code>DYN-WH-1</code></td>
-    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.3 + §4.4 (delivery + verification)</a></td>
-    <td>13.5s</td>
-    <td><span class="env-prod">prod</span></td>
+    <td></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">verification</a></td>
+    <td>17.5s</td>
+    <td><span class="env-unknown">unknown</span></td>
   </tr>
     </table>
     
-    <details class="rpc-details">
-      <summary>🔥 RPC request + response (captured 2026-06-01T10:41:49.659Z)</summary>
-      <div class="rpc-grid">
-        <div>
-          <h4>Request</h4>
-          <pre class="rpc-json">{
-  &quot;site_id&quot;: &quot;ed58a4ee-f6c9-4ca0-b19d-b4c821fa37c4&quot;,
-  &quot;payment_source_id&quot;: &quot;49e2c9cc-3139-4edf-ab4c-a764b14ef6e1&quot;,
-  &quot;dry_run&quot;: true,
-  &quot;cost_limit_usd&quot;: &quot;50&quot;,
-  &quot;tld_filter&quot;: [
-    &quot;xyz&quot;
-  ]
-}</pre>
-        </div>
-        <div>
-          <h4>Response</h4>
-          <pre class="rpc-json">{
-  &quot;results&quot;: [
-    {
-      &quot;tld&quot;: &quot;xyz&quot;,
-      &quot;domain_name&quot;: &quot;testdomainhhplkwrwlrvjssc.xyz&quot;,
-      &quot;addon_type&quot;: &quot;privacy&quot;,
-      &quot;currency&quot;: &quot;GBP&quot;,
-      &quot;status&quot;: &quot;DRY_RUN&quot;,
-      &quot;expected_domain_price&quot;: 11.09,
-      &quot;expected_addon_price&quot;: 0,
-      &quot;total_cost_usd&quot;: 0,
-      &quot;cycle_years&quot;: 1,
-      &quot;registrar_verified&quot;: false,
-      &quot;registration_verified&quot;: false,
-      &quot;sbs_verified&quot;: false
-    }
-  ],
-  &quot;total_cost_usd&quot;: 0,
-  &quot;cost_limit_reached&quot;: false
-}</pre>
-        </div>
-      </div>
-    </details>
+  </section>
+  <section>
+    <h2>UF-11</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens Lock panel; lock switch is visible</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-LOCK-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.9</a></td>
+    <td>138.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-19</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>clicking Transfer to Wix navigates to transfer-in purchase flow</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-TR-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">transfer-in</a></td>
+    <td>23.5s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-22</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens DNSSEC panel and add-DS CTA is visible</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.7</a></td>
+    <td>138.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-29</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens email-connect UI, asserts content, cancels without configuring</code></td>
+    <td><span class="ok">✓ PASS</span></td>
+    <td></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">email-connect</a></td>
+    <td>19.3s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-30</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens Connect-to-site panel; site picker visible</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-ASGN-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment</a></td>
+    <td>144.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-30b</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens Unassign modal, asserts content, cancels without disconnecting</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment</a></td>
+    <td>14.5s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-30c</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>open picker → pick site → handle redirect-option → Assign → verify assignment</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-ASGN-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">site-assignment (commit)</a></td>
+    <td>144.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-32</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens Remove modal, asserts content, cancels without removing</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">revoke / cancellation</a></td>
+    <td>17.1s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-5</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>change first name, save, and assert it persists</code></td>
+    <td><span class="ok">✓ PASS</span></td>
+    <td><code>DYN-CON-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.6</a></td>
+    <td>39.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-6</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens Privacy panel and a privacy switch is visible</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-PRV-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.8</a></td>
+    <td>138.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-7</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>change A record value, save, and assert it persists</code></td>
+    <td><span class="ok">✓ PASS</span></td>
+    <td><code>DYN-NS-1</code> <code>DYN-DS-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.7</a></td>
+    <td>27.2s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
+  </section>
+  <section>
+    <h2>UF-8</h2>
+    <table>
+      <tr><th>Test</th><th>Status</th><th>DYN IDs</th><th>Plan §</th><th>Duration</th><th>Env</th></tr>
+      <tr>
+    <td><code>opens Transfer-away modal, asserts content, cancels without triggering transfer</code></td>
+    <td><span class="fail">✗ FAIL</span></td>
+    <td><code>DYN-AUTH-1</code></td>
+    <td><a href="https://github.com/wix-private/premium/blob/master/domains/domain-vendor/TEST_PLAN_DYNADOT.md" target="_blank">§4.9</a></td>
+    <td>138.0s</td>
+    <td><span class="env-unknown">unknown</span></td>
+  </tr>
+    </table>
+    
   </section>
 </body>
 </html>
