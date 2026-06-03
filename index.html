@@ -108,23 +108,23 @@
   <header class="page-header">
     <h1>🎯 Dynadot Flows Sled</h1>
     <p class="subtitle">23 UF flows · <span class="env-badge">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></p>
-    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Wed, 03 Jun 2026 14:26:09 GMT</p>
+    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Wed, 03 Jun 2026 14:36:20 GMT</p>
   </header>
 
   
 
   <div class="stats">
     <div class="stat total"><div class="n">23</div><div class="l">Total</div></div>
-    <div class="stat pass"><div class="n">8</div><div class="l">Passed</div></div>
-    <div class="stat pending"><div class="n">15</div><div class="l">Pending</div></div>
+    <div class="stat pass"><div class="n">9</div><div class="l">Passed</div></div>
+    <div class="stat pending"><div class="n">14</div><div class="l">Pending</div></div>
   </div>
 
-  <div class="pass-bar"><div class="pass-bar-fill" style="width:35%"></div></div>
+  <div class="pass-bar"><div class="pass-bar-fill" style="width:39%"></div></div>
 
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All <span class="count">23</span></button>
-    <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">8</span></button>
-    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">15</span></button>
+    <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">9</span></button>
+    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">14</span></button>
     <button class="filter-btn" data-filter="yuf">⭐ YUF only <span class="count">11</span></button>
   </div>
 
@@ -206,6 +206,33 @@
     <td>—</td>
     <td class="section-cell">Verification (banner + resend)</td>
     <td class="dur">1.8m</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pass card-yuf" data-bucket="pass" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>DNSSEC</h2>
+        <span class="uf-code">UF-22</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">2.2m</span>
+      </div>
+    </header>
+    <p class="card-description">Open Edit Contact Info → scroll to DNSSEC section → assert controls present (verified on forjanetadnssec.com).</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">DNSSEC</span></td>
+    <td><span class="badge badge-pass">✓ PASS</span></td>
+    <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
+    <td class="section-cell">§4.7 (DNSSEC inside Edit Contact Info)</td>
+    <td class="dur">2.2m</td>
   </tr></tbody>
     </table>
     
@@ -529,33 +556,6 @@
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-TR-1</code></td>
     <td class="section-cell">Transfer-in (N/A: domain already at Wix)</td>
-    <td class="dur">—</td>
-  </tr></tbody>
-    </table>
-    
-  </section>
-  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
-    <header class="card-header">
-      <div class="card-title">
-        <h2>DNSSEC</h2>
-        <span class="uf-code">UF-22</span>
-        <span class="yuf-badge">⭐ YUF</span>
-        
-        <span class="badge badge-pending">⏳ PENDING</span>
-        <span class="impl-badge impl-progress">◐ In Progress</span>
-      </div>
-      <div class="card-meta">
-        <span class="dur">—</span>
-      </div>
-    </header>
-    <p class="card-description">Open Edit Contact Info → scroll to DNSSEC section → assert controls present (only domains bought with dnssec addon).</p>
-    <table>
-      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
-      <tbody><tr>
-    <td><span class="flow-name">DNSSEC</span></td>
-    <td><span class="badge badge-pending">⏳ PENDING</span></td>
-    <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
-    <td class="section-cell">§4.7 (DNSSEC inside Edit Contact Info)</td>
     <td class="dur">—</td>
   </tr></tbody>
     </table>
