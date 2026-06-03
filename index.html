@@ -59,6 +59,13 @@
   }
   .card-pass{border-left-color:var(--pass)}
   .card-pending{border-left-color:var(--pending)}
+  .card-yuf{box-shadow:0 1px 3px rgba(0,0,0,0.06), 0 0 0 1px rgba(245,158,11,0.25)}
+  .yuf-badge{background:linear-gradient(135deg,#f59e0b,#d97706);color:white;padding:3px 9px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:0.4px}
+  .card-description{font-size:13px;color:var(--muted);margin:6px 0 12px;line-height:1.5;font-style:italic}
+  .impl-badge{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.3px}
+  .impl-done{background:#dcfce7;color:#15803d}
+  .impl-progress{background:#fef3c7;color:#a16207}
+  .impl-todo{background:#e5e7eb;color:#4b5563}
   .card-delivery{border-left-width:6px;border-left-color:var(--pass);background:linear-gradient(180deg,#f0fdf4 0%,#ffffff 60%)}
   .card.hidden{display:none}
 
@@ -100,100 +107,153 @@
 <body>
   <header class="page-header">
     <h1>🎯 Dynadot Flows Sled</h1>
-    <p class="subtitle">14 UF flows · <span class="env-badge">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></p>
-    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Tue, 02 Jun 2026 15:41:31 GMT</p>
+    <p class="subtitle">23 UF flows · <span class="env-badge">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></p>
+    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Wed, 03 Jun 2026 14:14:08 GMT</p>
   </header>
 
-  <div class="delivery-banner">
-      <div class="delivery-banner-head">
-        <span class="delivery-icon">✅</span>
-        <span>Domain delivery succeeded</span>
-      </div>
-      <div class="delivery-banner-detail">
-        <code>testingguymeirandlidor.com</code>
-        <span class="delivery-status">Renews on Jun 2, 2027</span>
-        <span class="delivery-meta">Account: <code>guyme@wix.com</code></span>
-        <span class="delivery-meta">Feature toggle: <code>enableVendorServiceOps (required for the new vendor-service-ops flow)</code></span>
-      </div>
-    </div>
+  
 
   <div class="stats">
-    <div class="stat total"><div class="n">14</div><div class="l">Total</div></div>
-    <div class="stat pass"><div class="n">6</div><div class="l">Passed</div></div>
-    <div class="stat pending"><div class="n">8</div><div class="l">Pending</div></div>
+    <div class="stat total"><div class="n">23</div><div class="l">Total</div></div>
+    <div class="stat pass"><div class="n">8</div><div class="l">Passed</div></div>
+    <div class="stat pending"><div class="n">15</div><div class="l">Pending</div></div>
   </div>
 
-  <div class="pass-bar"><div class="pass-bar-fill" style="width:43%"></div></div>
+  <div class="pass-bar"><div class="pass-bar-fill" style="width:35%"></div></div>
 
   <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all">All <span class="count">14</span></button>
-    <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">6</span></button>
-    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">8</span></button>
+    <button class="filter-btn active" data-filter="all">All <span class="count">23</span></button>
+    <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">8</span></button>
+    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">15</span></button>
+    <button class="filter-btn" data-filter="yuf">⭐ YUF only <span class="count">11</span></button>
   </div>
 
   <main>
-  <section class="card card-pass card-delivery" data-bucket="pass">
+  <section class="card card-pass card-delivery" data-bucket="pass" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Domain Delivery</h2>
         <span class="uf-code">UF-00</span>
+        
         <span class="card-pill">🚀 Delivery</span>
         <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">18.1s</span>
       </div>
     </header>
+    <p class="card-description">Verify the manually-purchased fresh domain is present + active on the account.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Domain Delivery</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
     <td><code>DYN-REG-1</code> <code>DYN-INFO-1</code></td>
-    <td class="section-cell">Domain delivery (verified): testingguymeirandlidor.com — Renews on Jun 2, 2027</td>
+    <td class="section-cell">Domain delivery (verified)</td>
     <td class="dur">18.1s</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pass" data-bucket="pass">
+  <section class="card card-pass card-yuf" data-bucket="pass" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>ICANN Verification Cycle</h2>
+        <span class="uf-code">UF-10</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">1.4m</span>
+      </div>
+    </header>
+    <p class="card-description">On a fresh domain inside the ICANN 15-day grace window, assert the contact-verification banner is visible.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">ICANN Verification Cycle</span></td>
+    <td><span class="badge badge-pass">✓ PASS</span></td>
+    <td><code>DYN-ICANN-1</code> <code>DYN-ICANN-2</code></td>
+    <td class="section-cell">§2.2 (ICANN verification)</td>
+    <td class="dur">1.4m</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pass" data-bucket="pass" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Resend Verification Email</h2>
         <span class="uf-code">UF-10c</span>
         
+        
         <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">1.8m</span>
       </div>
     </header>
+    <p class="card-description">Click &quot;Resend Verification Email&quot; on a domain with pending verification.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Resend Verification Email</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
     <td>—</td>
-    <td class="section-cell">Verification (fresh domain banner)</td>
+    <td class="section-cell">Verification (banner + resend)</td>
     <td class="dur">1.8m</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pass" data-bucket="pass">
+  <section class="card card-pass card-yuf" data-bucket="pass" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>WHOIS Privacy ON vs OFF</h2>
+        <span class="uf-code">UF-28</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">1.3s</span>
+      </div>
+    </header>
+    <p class="card-description">External WHOIS (port 43) lookup against privacy-ON and privacy-OFF domains; assert markers / PII visibility match.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">WHOIS Privacy ON vs OFF</span></td>
+    <td><span class="badge badge-pass">✓ PASS</span></td>
+    <td><code>DYN-PRV-2</code> <code>DYN-PRV-3</code></td>
+    <td class="section-cell">§4.8 (WHOIS privacy lookup)</td>
+    <td class="dur">1.3s</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pass" data-bucket="pass" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Connect Email</h2>
         <span class="uf-code">UF-29</span>
         
+        
         <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">1.6m</span>
       </div>
     </header>
+    <p class="card-description">Open &quot;Connect an email purchased outside of Wix&quot; surface and verify the provider picker renders; cancel-safe.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Connect Email</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
@@ -204,265 +264,487 @@
     </table>
     
   </section>
-  <section class="card card-pass" data-bucket="pass">
+  <section class="card card-pass" data-bucket="pass" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Connect To Site</h2>
         <span class="uf-code">UF-30</span>
         
+        
         <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">2.0m</span>
       </div>
     </header>
+    <p class="card-description">Open the site-picker modal from the row menu (assign action) and verify sites list; cancel-safe.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Connect To Site</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
     <td>—</td>
-    <td class="section-cell">Site-assignment smoke (picker opens)</td>
+    <td class="section-cell">Site-assignment smoke</td>
     <td class="dur">2.0m</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pass" data-bucket="pass">
+  <section class="card card-pass card-yuf" data-bucket="pass" data-priority="yuf">
     <header class="card-header">
       <div class="card-title">
         <h2>Edit Contact Info</h2>
         <span class="uf-code">UF-5</span>
+        <span class="yuf-badge">⭐ YUF</span>
         
         <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">41.0s</span>
       </div>
     </header>
+    <p class="card-description">Edit the WHOIS registrant first name and verify it persists after save+confirm.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Edit Contact Info</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
     <td><code>DYN-CON-1</code></td>
-    <td class="section-cell">§4.6 — Update WHOIS (real mutation)</td>
+    <td class="section-cell">§4.6</td>
     <td class="dur">41.0s</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pass" data-bucket="pass">
+  <section class="card card-pass card-yuf" data-bucket="pass" data-priority="yuf">
     <header class="card-header">
       <div class="card-title">
         <h2>Update DNS Records</h2>
         <span class="uf-code">UF-7</span>
+        <span class="yuf-badge">⭐ YUF</span>
         
         <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">27.4s</span>
       </div>
     </header>
+    <p class="card-description">Change an A record on a domain, save, and confirm Dynadot/Wix persists the new value.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Update DNS Records</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
     <td><code>DYN-NS-1</code> <code>DYN-DS-1</code></td>
-    <td class="section-cell">§4.7 — Manage DNS (real mutation)</td>
+    <td class="section-cell">§4.7</td>
     <td class="dur">27.4s</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pending" data-bucket="pending">
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Lock / Unlock</h2>
         <span class="uf-code">UF-11</span>
         
+        
         <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
       </div>
     </header>
+    <p class="card-description">Toggle transfer-lock ON/OFF and confirm registrar enforces the lock.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Lock / Unlock</span></td>
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-LOCK-1</code></td>
-    <td class="section-cell">§4.8 — Lock (skipped: detail-page driver pending Task #55)</td>
+    <td class="section-cell">§4.8 — Lock (detail-page driver pending)</td>
     <td class="dur">—</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pending" data-bucket="pending">
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Multi-Year Purchase</h2>
+        <span class="uf-code">UF-12</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">Search a domain, change registration period to 5y, confirm price recalculates ~5× annual.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Multi-Year Purchase</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-REG-2</code></td>
+    <td class="section-cell">§4.3</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>IDN Domain</h2>
+        <span class="uf-code">UF-13</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">Search an IDN/Unicode SLD (e.g. münich), assert UI accepts non-ASCII and walks to contact-info on its punycode form.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">IDN Domain</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-AVL-2</code> <code>DYN-REG-3</code></td>
+    <td class="section-cell">§4.1</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Premium Blocked</h2>
+        <span class="uf-code">UF-14</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-done">● Done</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">Search a premium SLD (e.g. pizza.com), verify UI blocks the purchase path (PremiumCheckNotSupported branch).</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Premium Blocked</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-AVL-3</code> <code>DYN-PRC-5</code></td>
+    <td class="section-cell">§4.1</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>.ca Routes Away From Dynadot</h2>
+        <span class="uf-code">UF-15</span>
+        
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">RPC delivery for .ca succeeds — must route through a non-Dynadot vendor (Tucows / CIRA).</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">.ca Routes Away From Dynadot</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-VENDOR-1</code></td>
+    <td class="section-cell">Vendor routing (non-Dynadot TLDs)</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>.it Routes Away From Dynadot</h2>
+        <span class="uf-code">UF-16</span>
+        
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">RPC delivery for .it succeeds — must route through a non-Dynadot vendor (Tucows / OpenSRS).</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">.it Routes Away From Dynadot</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-VENDOR-2</code></td>
+    <td class="section-cell">Vendor routing (non-Dynadot TLDs)</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Transfer In</h2>
         <span class="uf-code">UF-19</span>
         
+        
         <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
       </div>
     </header>
+    <p class="card-description">Click &quot;Transfer to Wix&quot; for a 3rd-party-managed domain → land on transfer-in purchase flow.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Transfer In</span></td>
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-TR-1</code></td>
-    <td class="section-cell">Transfer-in (skipped: domain already at Wix)</td>
+    <td class="section-cell">Transfer-in (N/A: domain already at Wix)</td>
     <td class="dur">—</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pending" data-bucket="pending">
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
     <header class="card-header">
       <div class="card-title">
         <h2>DNSSEC</h2>
         <span class="uf-code">UF-22</span>
+        <span class="yuf-badge">⭐ YUF</span>
         
         <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
       </div>
     </header>
+    <p class="card-description">Open Edit Contact Info → scroll to DNSSEC section → assert controls present (only domains bought with dnssec addon).</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">DNSSEC</span></td>
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
-    <td class="section-cell">§4.7 — DNSSEC (skipped: domain not purchased with dnssec addon)</td>
+    <td class="section-cell">§4.7 (DNSSEC inside Edit Contact Info)</td>
     <td class="dur">—</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pending" data-bucket="pending">
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
     <header class="card-header">
       <div class="card-title">
         <h2>Unassign From Site</h2>
         <span class="uf-code">UF-30b</span>
         
-        <span class="badge badge-pending">⏳ PENDING</span>
-      </div>
-      <div class="card-meta">
-        <span class="dur">2.4m</span>
-      </div>
-    </header>
-    <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
-      <tbody><tr>
-    <td><span class="flow-name">Unassign From Site</span></td>
-    <td><span class="badge badge-pending">⏳ PENDING</span></td>
-    <td>—</td>
-    <td class="section-cell">Unassign (flake: shell load — skip-detection didn&#39;t fire)</td>
-    <td class="dur">2.4m</td>
-  </tr></tbody>
-    </table>
-    
-  </section>
-  <section class="card card-pending" data-bucket="pending">
-    <header class="card-header">
-      <div class="card-title">
-        <h2>Assign To Site</h2>
-        <span class="uf-code">UF-30c</span>
         
         <span class="badge badge-pending">⏳ PENDING</span>
-      </div>
-      <div class="card-meta">
-        <span class="dur">1.4m</span>
-      </div>
-    </header>
-    <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
-      <tbody><tr>
-    <td><span class="flow-name">Assign To Site</span></td>
-    <td><span class="badge badge-pending">⏳ PENDING</span></td>
-    <td><code>DYN-ASGN-1</code></td>
-    <td class="section-cell">Site-assignment commit (multi-step picker; flaky on slow shell)</td>
-    <td class="dur">1.4m</td>
-  </tr></tbody>
-    </table>
-    
-  </section>
-  <section class="card card-pending" data-bucket="pending">
-    <header class="card-header">
-      <div class="card-title">
-        <h2>Remove From Wix</h2>
-        <span class="uf-code">UF-32</span>
-        
-        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
         <span class="dur">—</span>
       </div>
     </header>
+    <p class="card-description">Open the Unassign modal for an assigned domain; cancel-safe.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
-    <td><span class="flow-name">Remove From Wix</span></td>
+    <td><span class="flow-name">Unassign From Site</span></td>
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td>—</td>
-    <td class="section-cell">Revoke (skipped: detail-page driver pending Task #55)</td>
+    <td class="section-cell">Unassign (N/A: domain not assigned)</td>
     <td class="dur">—</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pending" data-bucket="pending">
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Assign To Site</h2>
+        <span class="uf-code">UF-30c</span>
+        
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-done">● Done</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">1.4m</span>
+      </div>
+    </header>
+    <p class="card-description">FULL Assign-to-site flow: pick site → Next → redirect-vs-replace → Assign → verify success modal.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Assign To Site</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-ASGN-1</code></td>
+    <td class="section-cell">Site-assignment commit (multi-step picker)</td>
+    <td class="dur">1.4m</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Remove From Wix</h2>
+        <span class="uf-code">UF-32</span>
+        
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">Open Remove-from-Wix modal and confirm consequence bullets; cancel-safe (we never click &quot;Remove Domain&quot;).</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Remove From Wix</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td>—</td>
+    <td class="section-cell">Revoke (N/A: not in row menu)</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending" data-bucket="pending" data-priority="normal">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Multi-Vendor Fallback</h2>
+        <span class="uf-code">UF-34</span>
+        
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">When primary vendor fails (5xx / down), the SPI layer falls back to a secondary vendor — registration still succeeds.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Multi-Vendor Fallback</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-VENDOR-3</code> <code>DYN-VENDOR-4</code></td>
+    <td class="section-cell">Vendor fallback (SPI layer)</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Auto-Renewal</h2>
+        <span class="uf-code">UF-4</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">—</span>
+      </div>
+    </header>
+    <p class="card-description">Verify the auto-renew indicator is surfaced for a delivered domain (UI read).</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Auto-Renewal</span></td>
+    <td><span class="badge badge-pending">⏳ PENDING</span></td>
+    <td><code>DYN-REN-1</code> <code>DYN-REN-2</code></td>
+    <td class="section-cell">§4.4 (Auto-renewal)</td>
+    <td class="dur">—</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
     <header class="card-header">
       <div class="card-title">
         <h2>Privacy Toggle</h2>
         <span class="uf-code">UF-6</span>
+        <span class="yuf-badge">⭐ YUF</span>
         
         <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
       </div>
       <div class="card-meta">
         <span class="dur">2.4m</span>
       </div>
     </header>
+    <p class="card-description">Toggle WHOIS privacy ON/OFF on a domain and verify the registrar reflects the new state.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Privacy Toggle</span></td>
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-PRV-1</code></td>
-    <td class="section-cell">§4.8 — Privacy (Wix Studio shell slow load; detail-page driver pending Task #55)</td>
+    <td class="section-cell">§4.8</td>
     <td class="dur">2.4m</td>
   </tr></tbody>
     </table>
     
   </section>
-  <section class="card card-pending" data-bucket="pending">
+  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
     <header class="card-header">
       <div class="card-title">
         <h2>Transfer Out</h2>
         <span class="uf-code">UF-8</span>
+        <span class="yuf-badge">⭐ YUF</span>
         
         <span class="badge badge-pending">⏳ PENDING</span>
+        <span class="impl-badge impl-progress">◐ In Progress</span>
       </div>
       <div class="card-meta">
         <span class="dur">2.0m</span>
       </div>
     </header>
+    <p class="card-description">Open the Transfer-away modal (handles 60-day ICANN lock branch) and confirm CTAs render correctly; cancel-safe.</p>
     <table>
-      <thead><tr><th>Test</th><th>Status</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">Transfer Out</span></td>
     <td><span class="badge badge-pending">⏳ PENDING</span></td>
     <td><code>DYN-AUTH-1</code></td>
-    <td class="section-cell">§4.9 — Transfer-away (ICANN 60-day lock + shell load)</td>
+    <td class="section-cell">§4.9</td>
     <td class="dur">2.0m</td>
   </tr></tbody>
     </table>
@@ -482,7 +764,11 @@
         buttons.forEach((b) => b.classList.toggle('active', b === btn));
         cards.forEach((c) => {
           const bk = c.dataset.bucket;
-          c.classList.toggle('hidden', filter !== 'all' && bk !== filter);
+          const pri = c.dataset.priority;
+          let show = true;
+          if (filter === 'pass' || filter === 'pending') show = bk === filter;
+          else if (filter === 'yuf') show = pri === 'yuf';
+          c.classList.toggle('hidden', !show);
         });
       });
     });
