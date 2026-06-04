@@ -108,23 +108,23 @@
   <header class="page-header">
     <h1>🎯 Dynadot Flows Sled</h1>
     <p class="subtitle">23 UF flows · <span class="env-badge">guyme@wix.com / testingguymeirandlidor.com / enableVendorServiceOps</span></p>
-    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Wed, 03 Jun 2026 14:36:20 GMT</p>
+    <p class="subtitle" style="margin-top:4px;font-size:12px">Updated: Thu, 04 Jun 2026 05:57:11 GMT</p>
   </header>
 
   
 
   <div class="stats">
     <div class="stat total"><div class="n">23</div><div class="l">Total</div></div>
-    <div class="stat pass"><div class="n">9</div><div class="l">Passed</div></div>
-    <div class="stat pending"><div class="n">14</div><div class="l">Pending</div></div>
+    <div class="stat pass"><div class="n">10</div><div class="l">Passed</div></div>
+    <div class="stat pending"><div class="n">13</div><div class="l">Pending</div></div>
   </div>
 
-  <div class="pass-bar"><div class="pass-bar-fill" style="width:39%"></div></div>
+  <div class="pass-bar"><div class="pass-bar-fill" style="width:43%"></div></div>
 
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All <span class="count">23</span></button>
-    <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">9</span></button>
-    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">14</span></button>
+    <button class="filter-btn" data-filter="pass">✓ Passed <span class="count">10</span></button>
+    <button class="filter-btn" data-filter="pending">⏳ Pending <span class="count">13</span></button>
     <button class="filter-btn" data-filter="yuf">⭐ YUF only <span class="count">11</span></button>
   </div>
 
@@ -221,18 +221,18 @@
         <span class="impl-badge impl-done">● Done</span>
       </div>
       <div class="card-meta">
-        <span class="dur">2.2m</span>
+        <span class="dur">1.6m</span>
       </div>
     </header>
-    <p class="card-description">Open Edit Contact Info → scroll to DNSSEC section → assert controls present (verified on forjanetadnssec.com).</p>
+    <p class="card-description">Drive the Privacy+DNSSEC protection ON→OFF→ON cycle in Edit Contact Info; self-restoring (verified on forjanetadnssec.com).</p>
     <table>
       <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
       <tbody><tr>
     <td><span class="flow-name">DNSSEC</span></td>
     <td><span class="badge badge-pass">✓ PASS</span></td>
     <td><code>DYN-DS-2</code> <code>DYN-DS-3</code></td>
-    <td class="section-cell">§4.7 (DNSSEC inside Edit Contact Info)</td>
-    <td class="dur">2.2m</td>
+    <td class="section-cell">§4.7 (Privacy + DNSSEC bundled toggle)</td>
+    <td class="dur">1.6m</td>
   </tr></tbody>
     </table>
     
@@ -341,6 +341,33 @@
     <td><code>DYN-CON-1</code></td>
     <td class="section-cell">§4.6</td>
     <td class="dur">41.0s</td>
+  </tr></tbody>
+    </table>
+    
+  </section>
+  <section class="card card-pass card-yuf" data-bucket="pass" data-priority="yuf">
+    <header class="card-header">
+      <div class="card-title">
+        <h2>Privacy Toggle</h2>
+        <span class="uf-code">UF-6</span>
+        <span class="yuf-badge">⭐ YUF</span>
+        
+        <span class="badge badge-pass">✓ PASS</span>
+        <span class="impl-badge impl-done">● Done</span>
+      </div>
+      <div class="card-meta">
+        <span class="dur">44.2s</span>
+      </div>
+    </header>
+    <p class="card-description">Drive the Privacy ON→OFF→ON cycle in Edit Contact Info; self-restoring; bundled with DNSSEC.</p>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
+      <tbody><tr>
+    <td><span class="flow-name">Privacy Toggle</span></td>
+    <td><span class="badge badge-pass">✓ PASS</span></td>
+    <td><code>DYN-PRV-1</code></td>
+    <td class="section-cell">§4.8 (Privacy+DNSSEC bundled toggle)</td>
+    <td class="dur">44.2s</td>
   </tr></tbody>
     </table>
     
@@ -692,33 +719,6 @@
     <td><code>DYN-REN-1</code> <code>DYN-REN-2</code></td>
     <td class="section-cell">§4.4 (Auto-renewal)</td>
     <td class="dur">—</td>
-  </tr></tbody>
-    </table>
-    
-  </section>
-  <section class="card card-pending card-yuf" data-bucket="pending" data-priority="yuf">
-    <header class="card-header">
-      <div class="card-title">
-        <h2>Privacy Toggle</h2>
-        <span class="uf-code">UF-6</span>
-        <span class="yuf-badge">⭐ YUF</span>
-        
-        <span class="badge badge-pending">⏳ PENDING</span>
-        <span class="impl-badge impl-progress">◐ In Progress</span>
-      </div>
-      <div class="card-meta">
-        <span class="dur">2.4m</span>
-      </div>
-    </header>
-    <p class="card-description">Toggle WHOIS privacy ON/OFF on a domain and verify the registrar reflects the new state.</p>
-    <table>
-      <thead><tr><th>Test</th><th>Result</th><th>DYN</th><th>Notes</th><th>Time</th></tr></thead>
-      <tbody><tr>
-    <td><span class="flow-name">Privacy Toggle</span></td>
-    <td><span class="badge badge-pending">⏳ PENDING</span></td>
-    <td><code>DYN-PRV-1</code></td>
-    <td class="section-cell">§4.8</td>
-    <td class="dur">2.4m</td>
   </tr></tbody>
     </table>
     
